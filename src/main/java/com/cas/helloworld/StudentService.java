@@ -15,6 +15,11 @@ public class StudentService {
         this.sr = sr;
     }
     public void joinStudent(Student student) {
-
+        //누군가 나에게 student 를 주면 저장하면 되게 하려고 함.
+        //injection 하기. CRUD repository 에 있는 기능이 전부 나옴.
+        sr.save(student);
+    }
+    public Student findStudent(String name) {
+        return sr.findById(name).get();
     }
 }
