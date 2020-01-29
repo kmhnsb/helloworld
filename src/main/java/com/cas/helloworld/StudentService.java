@@ -7,15 +7,14 @@ import org.springframework.stereotype.Service;
 public class StudentService {
     private StudentRepository sr;
 
-    public void joinStudent(Student student) {
-
-    }
-
     public StudentRepository getSr() {
         return sr;
     }
     @Autowired
     public void setSr(StudentRepository sr) {
         this.sr = sr;
+    }
+    public void joinStudent(Student student) {
+
     }
 }
