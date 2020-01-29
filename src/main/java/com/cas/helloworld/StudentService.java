@@ -3,6 +3,8 @@ package com.cas.helloworld;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     private StudentRepository sr;
@@ -19,7 +21,7 @@ public class StudentService {
         //injection 하기. CRUD repository 에 있는 기능이 전부 나옴.
         sr.save(student);
     }
-    public Student findStudent(String name) {
-        return sr.findById(name).get();
+    public List<Student> findStudentByName(String name) {
+        return sr.findByName(name);
     }
 }
