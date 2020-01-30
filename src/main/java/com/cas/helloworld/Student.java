@@ -1,9 +1,7 @@
 package com.cas.helloworld;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "student")
 public class Student {
@@ -13,6 +11,8 @@ public class Student {
     private String name;
     @Column
     private int age;
+    @OneToMany (mappedBy = "student", fetch = FetchType.LAZY)
+    private List<Clazz> clazzes;
 
     public void cleaning() {    //이게 domain 객체
         System.out.println(name + ": Yes, I'm cleaning:(");

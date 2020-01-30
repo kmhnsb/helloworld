@@ -2,12 +2,25 @@ POST http://localhost:8080/students-api
 Content-Type: application/json
 
 {
-  "name": "Kim",
-  "age": 20
+  "name": "asfasdf",
+  "age": 50
 }
 ###
 
 GET http://localhost:8080/students-api
 Accept: application/json
+###
 
+GET http://localhost:8080
+Accept: application/json
+
+###
+POST http://localhost:8080/clazzes
+Content-Type: application/json
+
+{
+  "name": "Java Study",
+  "description": "easy",
+  "student": "http://localhost:8080/students-api/2"
+}
 ###
