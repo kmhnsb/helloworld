@@ -14,6 +14,9 @@ public class Student {
     @OneToMany (mappedBy = "student", fetch = FetchType.LAZY)
     private List<Clazz> clazzes;
 
+    @OneToMany(mappedBy = "student")
+    private  List<Order> orders;    //탐색 방향
+
     public void cleaning() {    //이게 domain 객체
         System.out.println(name + ": Yes, I'm cleaning:(");
     }
@@ -40,5 +43,21 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public List<Clazz> getClazzes() {
+        return clazzes;
+    }
+
+    public void setClazzes(List<Clazz> clazzes) {
+        this.clazzes = clazzes;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
